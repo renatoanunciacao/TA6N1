@@ -14,6 +14,7 @@
                     <p:commandButton value="Novo" icon="ui-icon-plus"
                                      actionListener="#{controleAnimal.novo()}"
                                      update="formEdicao formListagem"/>
+                    <br/><br/>
                     <ifsul:campodados valor="#{controleAnimal.lista}"
                                       carrega="true">
                         <p:column headerText="ID">
@@ -39,17 +40,21 @@
                                 <p:commandButton icon="ui-icon-pencil"
                                                  actionListener="#{controleAnimal.alterar(obj)}"
                                                  process="@this"
-                                                 update="formListagem :formEdicao"/>
+                                                 update="formListagem :formEdicao"
+                                                 style="border: 2px solid blue;" />
                                 <p:commandButton icon="ui-icon-trash"
                                                  actionListener="#{controleAnimal.excluir(obj)}"
                                                  process="@this"
-                                                 update="formListagem"/>
+                                                 update="formListagem"
+                                                 style="border: 2px solid red;"
+                                                 class="ui-fluid"/>
                             </div>
                         </p:column>
                     </ifsul:campodados>
                 </h:panelGroup>
             </h:form>
             <ui:include src="formulario.xhtml"/>
+            
         </ui:define>
     </ui:composition>
 </html>
